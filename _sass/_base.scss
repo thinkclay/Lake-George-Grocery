@@ -1,0 +1,322 @@
+/**
+ * RESET
+ *
+ * Reset the margins and paddings, etc of all raw html elements
+ * Make block elements actually display block
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark, audio, video
+{
+  border: 0;
+  font-size: 100%;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+*, *::before, *::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:focus {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html, body {
+  background: $base_light;
+  color: $base_medium;
+  font: 100 10px $font_body;
+  font-smoothing: antialiased;
+}
+
+.header {
+  display: block;
+  font-weight: 100;
+  margin-top: 1rem;
+}
+
+.text {
+  display: block;
+  font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-family: $font_display;
+  font-weight: 100;
+  line-height: 1.25em;
+  padding: 1.25em 0 .25em 0;
+
+  &.red { color: $brand_red; }
+  &.orange { color: $brand_orange; }
+  &.yellow { color: $brand_yellow; }
+  &.green { color: $brand_green; }
+  &.blue { color: $brand_blue; }
+  &.pink { color: $brand_pink; }
+}
+
+h1 {
+  font-family: $font_display;
+  color: $base_dark;
+  font-size: 4rem;
+
+  @include breakpoint(small) {
+    font-size: 2.7rem;
+  }
+}
+
+h2 {
+  font-size: 3.5rem;
+  padding-top: .8em;
+
+  @include breakpoint(small) {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  color: $base_medium;
+  font-size: 2.5rem;
+
+  @include breakpoint(small) {
+    font-size: 2.2rem;
+  }
+}
+
+h4 {
+  font-size: 2.2rem;
+
+  @include breakpoint(small) {
+    font-size: 1.8rem;
+  }
+}
+
+h5 {
+  font-size: 2rem;
+
+  @include breakpoint(small) {
+    font-size: 1.5rem;
+  }
+}
+
+h6, .small.header {
+  font-size: 1.8rem;
+}
+
+blockquote, q {
+  @extend %font_display;
+  background: $base_light;
+  border-left: 2px solid $base_medium;
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  margin: .5rem 0 1.5rem;
+  padding: 1rem 1.75rem;
+  quotes: none;
+
+  &.right {
+    border: none;
+    border-right: 2px solid $base_medium;
+    color: $label_color;
+    float: right;
+    font-size: 2rem;
+    max-width: 50%;
+    margin: .5rem 0 0 1em;
+  }
+
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+
+  *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  p {
+    font-size: 2.2rem;
+    font-weight: 100;
+  }
+}
+
+p {
+  font-family: $font_body;
+  font-size: 1.6rem;
+  line-height: 1.75em;
+  padding: 0 0 .75em;
+
+  q {
+    background: none;
+    border: none;
+    display: inline;
+    padding: 0;
+  }
+
+  em {
+    font-weight: 700;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  a {
+    font-weight: 700;
+  }
+}
+
+address {
+  display: block;
+  font-family: $font_body;
+  font-size: 1.6rem;
+  line-height: 1.75em;
+  padding: 0 0 .75rem;
+}
+
+a {
+  color: $link_color;
+  outline: none;
+  text-decoration: none;
+  transition: color .2s;
+
+  &:hover {
+    color: darken($link_color, 30%);
+
+    img {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    }
+  }
+}
+
+img {
+  transition: box-shadow .2s;
+}
+
+hr {
+  background: darken($base_light, 5%);
+  border: none;
+  clear: both;
+  height: 1px;
+  margin: 3rem 0 2rem;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 2rem 0;
+
+  &.fluid {
+    width: 100%;
+  }
+
+  &.compact {
+    th, td {
+      font-size: 1.2rem;
+      padding: .5rem 1rem;
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid darken($base_light, 10%);
+
+    th, td {
+      font-size: 1.4rem;
+      padding: 1.5rem 1rem;
+      text-align: left;
+      vertical-align: middle;
+
+      &.constrained {
+        max-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    th {
+      background: darken($base_light, 5%);
+    }
+
+    &:nth-child(odd) {
+      td {
+        background: lighten($base_light, 2%);
+      }
+    }
+
+    &.green {
+      td {
+        background: transparentize($brand_green, 0.7);
+      }
+    }
+
+    &.red {
+      td {
+        background: transparentize($brand_red, 0.7);
+      }
+    }
+
+    td.actions {
+      text-align: right;
+    }
+  }
+}
+
+ol, ul {
+	list-style: none;
+
+  &.bordered {
+    li {
+      border-top: 1px solid;
+      color: darken($base_light, 10%);
+      list-style: none;
+      margin: 0 -1.5rem;
+
+      a {
+        background-color: rgba(0, 0, 0, 0.03);
+        display: block;
+        line-height: 2.75rem;
+        padding: 1rem 1.5rem;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        i {
+          display: inline-block;
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.one.third.column {
+  padding: 2.5rem;
+  width: 33.33%;
+}
+
+.two.third.column {
+  padding: 2.5rem;
+  width: 66.66%;
+}

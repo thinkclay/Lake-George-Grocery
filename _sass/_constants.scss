@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Marck+Script|Open+Sans+Condensed:300');
+
+// Breakpoints
+$breakpoint_small: 600px;
+$breakpoint_medium: 800px;
+$breakpoint_large: 1200px;
+
+// Base Colors
+$base_light: #dce2aa;
+$base_medium: #8f987e;
+$base_dark: #4b543b;
+$content_background: #FBFFD9;
+
+$tabs: $base_medium;
+
+// Brand Colors
+$brand_blue: rgb(68, 85, 166);
+$brand_green: #8ed081;
+$brand_teal: #b4d2ba;
+$brand_orange: #b57f50;
+$brand_yellow: #dce2aa;
+$brand_red: rgb(167, 62, 79);
+$brand_pink: rgb(196, 118, 175);
+
+// Other Colors
+$label_color: $base_medium;
+$link_color: #b16943;
+
+// Typography
+$font_condensed: 'Open Sans Condensed', sans-serif;
+$font_header: 'Marck Script', serif;
+$font_body: 'Lato', Calibri, Arial, sans-serif;
+$font_display: 'Marck Script', serif;
+$font_monospace: Consolas, Monaco, 'Andale Mono', monospace;
+
+%font_body {
+  font-family: $font_body;
+}
+
+%font_header {
+  font-family:  $font_condensed;
+  font-weight: 700;
+}
+
+%font_display {
+  font-family: $font_display;
+}
+
+%clearfix {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "medium" {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+}
