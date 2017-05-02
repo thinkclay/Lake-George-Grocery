@@ -5,13 +5,13 @@
   min-height: 80rem;
 
   .info.column {
-    @extend .two.third.column;
     float: left;
+    width: 50%;
   }
 
   .map.column {
-    @extend .one.third.column;
     float: right;
+    width: 40%;
 
     img {
       border: 2px solid #fff;
@@ -24,7 +24,7 @@
   }
 }
 
-#about, #delivery {
+#about, #delivery, #contact {
   max-width: 800px;
 }
 
