@@ -6,12 +6,12 @@ $breakpoint_medium: 800px;
 $breakpoint_large: 1200px;
 
 // Base Colors
-$base_light: #dce2aa;
-$base_medium: #8f987e;
+$base_light: #D1D79C;
+$base_medium: #99896F;
 $base_dark: #4b543b;
-$content_background: #FBFFD9;
+$content_background: #f7f0e1;
 
-$tabs: $base_medium;
+$tabs: darken($base_light, 40%);
 
 // Brand Colors
 $brand_blue: rgb(68, 85, 166);
@@ -24,7 +24,7 @@ $brand_pink: rgb(196, 118, 175);
 
 // Other Colors
 $label_color: $base_medium;
-$link_color: #b16943;
+$link_color: #645B7B;
 
 // Typography
 $font_condensed: 'Open Sans Condensed', sans-serif;

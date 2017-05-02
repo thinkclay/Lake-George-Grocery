@@ -37,8 +37,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 html, body {
-  background: $base_light;
-  color: $base_medium;
+  background: $content_background;
+  color: $base_dark;
   font: 100 10px $font_body;
   font-smoothing: antialiased;
 }
@@ -56,6 +56,7 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
+  color: $base_dark;
   font-family: $font_display;
   font-weight: 100;
   line-height: 1.25em;
@@ -71,7 +72,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-family: $font_display;
-  color: $base_dark;
   font-size: 4rem;
 
   @include breakpoint(small) {
@@ -89,7 +89,6 @@ h2 {
 }
 
 h3 {
-  color: $base_medium;
   font-size: 2.5rem;
 
   @include breakpoint(small) {
