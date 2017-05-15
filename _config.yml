@@ -23,6 +23,7 @@ sass:
   sass_dir: _sass
 include: ['_pages']
 repository: thinkclay/Lake-George-Grocery
+google_analytics: UA-99126506-1
 # Build settings
 markdown: kramdown
 kramdown:
